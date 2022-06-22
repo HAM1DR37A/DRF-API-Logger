@@ -10,6 +10,8 @@
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
 
+import re
+
 import setuptools
 
 
@@ -19,16 +21,24 @@ def get_long_desc():
     return long_description
 
 
+PACKAGE_NAME = 'drf_api_logger_with_user'
+SOURCE_DIRECTORY = 'drf_api_logger'
+SOURCE_PACKAGE_REGEX = re.compile(rf'^{SOURCE_DIRECTORY}')
+
+source_packages = setuptools.find_packages(include=[SOURCE_DIRECTORY, f'{SOURCE_DIRECTORY}.*'])
+proj_packages = [SOURCE_PACKAGE_REGEX.sub(PACKAGE_NAME, name) for name in source_packages]
+
 setuptools.setup(
-    name="drf_api_logger",
-    version="1.1.10",
-    author="Vishal Anand",
-    author_email="vishalanandl177@gmail.com",
+    name="drf_api_logger_with_user",
+    version="1.2.0",
+    author="Hamid Soltani",
+    author_email="pandora10mk@gmail.com",
     description="An API Logger for your Django Rest Framework project.",
     long_description=get_long_desc(),
     long_description_content_type="text/markdown",
-    url="https://github.com/vishalanandl177/DRF-API-Logger",
-    packages=setuptools.find_packages(),
+    url="https://github.com/HAM1DR37A/DRF-API-Logger/",
+    packages=proj_packages,
+    package_dir={PACKAGE_NAME: SOURCE_DIRECTORY},
     install_requires=["djangorestframework>=3.7.4", "bleach>=3.1.5"],
     license='MIT',
     python_requires='>=3.6',
