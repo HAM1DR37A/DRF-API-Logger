@@ -1,6 +1,6 @@
 from django.db import models
 
-from drf_api_logger.utils import database_log_enabled
+from drf_api_logger_with_user.utils import database_log_enabled
 
 
 if database_log_enabled():

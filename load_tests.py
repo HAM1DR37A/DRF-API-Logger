@@ -6,7 +6,7 @@ from boot_django import boot_django
 # call the django setup routine
 boot_django()
 
-default_labels = ("drf_api_logger.tests",)
+default_labels = ("drf_api_logger_with_user.tests",)
 
 
 def get_suite(labels=default_labels):

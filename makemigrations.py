@@ -5,4 +5,4 @@ from boot_django import boot_django
 # call the django setup routine
 boot_django()
 
-call_command("makemigrations", "drf_api_logger")
+call_command("makemigrations", "drf_api_logger_with_user")

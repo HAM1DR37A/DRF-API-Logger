@@ -4,9 +4,9 @@ import bleach
 from django.conf import settings
 from django.urls import resolve
 from django.utils import timezone
-from drf_api_logger import API_LOGGER_SIGNAL
-from drf_api_logger.start_logger_when_server_starts import LOGGER_THREAD
-from drf_api_logger.utils import get_headers, get_client_ip, mask_sensitive_data, mask_sensitive_data_url, get_size
+from drf_api_logger_with_user import API_LOGGER_SIGNAL
+from drf_api_logger_with_user.start_logger_when_server_starts import LOGGER_THREAD
+from drf_api_logger_with_user.utils import get_headers, get_client_ip, mask_sensitive_data, mask_sensitive_data_url, get_size
 
 """
 File: api_logger_middleware.py

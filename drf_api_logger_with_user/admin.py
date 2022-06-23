@@ -5,10 +5,10 @@ from django.contrib import admin
 from django.db.models import Count
 from django.http import HttpResponse
 
-from drf_api_logger.utils import database_log_enabled
+from drf_api_logger_with_user.utils import database_log_enabled
 
 if database_log_enabled():
-    from drf_api_logger.models import APILogsModel
+    from drf_api_logger_with_user.models import APILogsModel
     from django.utils.translation import gettext_lazy as _
     import csv
 

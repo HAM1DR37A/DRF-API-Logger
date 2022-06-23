@@ -2,7 +2,7 @@ import os
 import django
 from django.conf import settings
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "drf_api_logger"))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "drf_api_logger_with_user"))
 
 
 def boot_django():
@@ -16,7 +16,7 @@ def boot_django():
             }
         },
         INSTALLED_APPS=(
-            "drf_api_logger",
+            "drf_api_logger_with_user",
         ),
         TIME_ZONE="UTC",
         USE_TZ=True,

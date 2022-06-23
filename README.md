@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'drf_api_logger',  #  Add here
+    drf_api_logger_with_user,  #  Add here
 ]
 ```
 
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware', # Add here
+    'drf_api_logger_with_user.middleware.api_logger_middleware.APILoggerMiddleware', # Add here
 ]
 ```
 
@@ -100,7 +100,7 @@ Example code to listen to the API Logger Signal.
 """
 Import API_LOGGER_SIGNAL
 """
-from drf_api_logger import API_LOGGER_SIGNAL
+from drf_api_logger_with_user import API_LOGGER_SIGNAL
 
 
 """
@@ -243,7 +243,7 @@ You can use the DRF API Logger Model to query some information.
 
 Note: Make sure to set "DRF_API_LOGGER_DATABASE = True" in settings.py file.
 ```
-from drf_api_logger.models import APILogsModel
+from drf_api_logger_with_user.models import APILogsModel
 
 """
 Example:

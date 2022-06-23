@@ -22,7 +22,7 @@ def get_long_desc():
 
 
 PACKAGE_NAME = 'drf_api_logger_with_user'
-SOURCE_DIRECTORY = 'drf_api_logger'
+SOURCE_DIRECTORY = 'drf_api_logger_with_user'
 SOURCE_PACKAGE_REGEX = re.compile(rf'^{SOURCE_DIRECTORY}')
 
 source_packages = setuptools.find_packages(include=[SOURCE_DIRECTORY, f'{SOURCE_DIRECTORY}.*'])

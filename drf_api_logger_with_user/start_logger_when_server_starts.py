@@ -1,9 +1,9 @@
-from drf_api_logger.utils import database_log_enabled
+from drf_api_logger_with_user.utils import database_log_enabled
 
 LOGGER_THREAD = None
 
 if database_log_enabled():
-    from drf_api_logger.insert_log_into_database import InsertLogIntoDatabase
+    from drf_api_logger_with_user.insert_log_into_database import InsertLogIntoDatabase
     import threading
 
     LOG_THREAD_NAME = 'insert_log_into_database'
