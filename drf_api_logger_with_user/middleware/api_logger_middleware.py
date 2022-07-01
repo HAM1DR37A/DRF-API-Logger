@@ -56,6 +56,12 @@ class APILoggerMiddleware:
                     settings.DRF_API_LOGGER_STATUS_CODES) is list:
                 self.DRF_API_LOGGER_STATUS_CODES = settings.DRF_API_LOGGER_STATUS_CODES
 
+        self.DRF_API_LOGGER_SKIP_STATUS_CODES = []
+        if hasattr(settings, 'DRF_API_LOGGER_SKIP_STATUS_CODES'):
+            if type(settings.DRF_API_LOGGER_SKIP_STATUS_CODES) is tuple or type(
+                    settings.DRF_API_LOGGER_SKIP_STATUS_CODES) is list:
+                self.DRF_API_LOGGER_SKIP_STATUS_CODES = settings.DRF_API_LOGGER_SKIP_STATUS_CODES
+
     def __call__(self, request):
 
         # Run only if logger is enabled.
@@ -89,6 +95,9 @@ class APILoggerMiddleware:
 
             # Only log required status codes if matching
             if self.DRF_API_LOGGER_STATUS_CODES and response.status_code not in self.DRF_API_LOGGER_STATUS_CODES:
+                return response
+
+            if self.DRF_API_LOGGER_SKIP_STATUS_CODES and response.status_code in self.DRF_API_LOGGER_SKIP_STATUS_CODES:
                 return response
 
             # Code to be executed for each request/response after

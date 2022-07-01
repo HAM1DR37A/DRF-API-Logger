@@ -30,7 +30,7 @@ proj_packages = [SOURCE_PACKAGE_REGEX.sub(PACKAGE_NAME, name) for name in source
 
 setuptools.setup(
     name="drf_api_logger_with_user",
-    version="1.2.4",
+    version="1.2.5",
     author="Hamid Soltani",
     author_email="pandora10mk@gmail.com",
     description="An API Logger for your Django Rest Framework project.",

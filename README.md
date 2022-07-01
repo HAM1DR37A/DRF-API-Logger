@@ -196,6 +196,12 @@ You can log only selected responses by specifying `DRF_API_LOGGER_STATUS_CODES` 
 DRF_API_LOGGER_STATUS_CODES = ['200', '400', '404', '500']  # Default to empty list (Log all responses).
 ```
 
+### Want to skip selected response status codes? (Optional)
+You can skip selected responses by specifying `DRF_API_LOGGER_SKIP_STATUS_CODES` in settings.py.
+```python
+DRF_API_LOGGER_SKIP_STATUS_CODES = ['301', '401']  # Default to empty list (Log all responses).
+```
+
 ### Want to see the API information in local timezone? (Optional)
 You can also change the timezone by specifying `DRF_API_LOGGER_TIMEDELTA` in settings.py.
 It won't change the Database timezone. It will still remain UTC or the timezone you have defined.
