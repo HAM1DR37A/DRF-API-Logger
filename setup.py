@@ -30,7 +30,7 @@ proj_packages = [SOURCE_PACKAGE_REGEX.sub(PACKAGE_NAME, name) for name in source
 
 setuptools.setup(
     name="drf_api_logger_with_user",
-    version="1.2.5",
+    version="1.3.0",
     author="Hamid Soltani",
     author_email="pandora10mk@gmail.com",
     description="An API Logger for your Django Rest Framework project.",
@@ -40,7 +40,7 @@ setuptools.setup(
     packages=proj_packages,
     package_dir={PACKAGE_NAME: SOURCE_DIRECTORY},
     install_requires=["djangorestframework>=3.7.4", "bleach>=3.1.5"],
-    license='MIT',
+    license='Apache 2.0',
     python_requires='>=3.6',
     include_package_data=True,
     classifiers=[
